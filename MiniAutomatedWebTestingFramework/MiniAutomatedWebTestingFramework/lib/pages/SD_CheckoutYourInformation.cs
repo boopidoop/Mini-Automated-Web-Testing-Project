@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MiniAutomatedWebTestingFramework.utils;
+using OpenQA.Selenium;
 
 namespace MiniAutomatedWebTestingFramework.lib.pages
 {
@@ -35,6 +36,12 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         public void FillFirstName(string firstName) => _firstNameField.SendKeys(firstName);
         public void FillLastName(string lastName) => _lastNameField.SendKeys(lastName);
         public void FillPostalCode(string postalCode) => _postalCodeField.SendKeys(postalCode);
+        public void FillCustomerDetails(CustomerDetails customerDetails)
+        {
+            FillFirstName(customerDetails.firstName);
+            FillLastName(customerDetails.lastName);
+            FillPostalCode(customerDetails.postalCode);
+        }
         public void ClickContinue() => _continueButton.Click();
         public void ClickCancel() => _cancelButton.Click();
         public string GetErrorMessage() => _errorMessageContainer.Text;
