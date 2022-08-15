@@ -13,6 +13,7 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         // Sort Items dropdown element.
         private IWebElement _sortProductsDropDown => _seleniumDriver.FindElement(By.ClassName("select_container"));
 
+        private IWebElement _shoppingCartButton => _seleniumDriver.FindElement(By.Id("shopping_cart_container"));
         private IWebElement _shoppingCartBadge => _seleniumDriver.FindElement(By.ClassName("shopping_cart_badge"));
 
         public SD_ProductsPage(IWebDriver seleniumDriver)
@@ -39,6 +40,9 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         public string GetSortZToA() => "Name (Z to A)";
         public string GetSortPriceLowToHigh() => "Price (low to high)";
         public string GetSortPriceHighToLow() => "Price (high to low)";
+
+        // URL Path to the YourCart Page
+        public void VisitYourCart() => _shoppingCartButton.Click();
 
         public void VisitItemPageFromImage(string itemID)
         {
