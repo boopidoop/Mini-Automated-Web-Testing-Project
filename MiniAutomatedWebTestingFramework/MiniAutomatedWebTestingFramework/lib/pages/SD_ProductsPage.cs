@@ -8,11 +8,10 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         private SD_SignInPage _signinPage;
 
         private IWebElement _inventoryItemImage => _seleniumDriver.FindElement(By.ClassName("inventory_item_img"));
-        private IWebElement _inventoryItemName => _seleniumDriver.FindElement(By.ClassName("inventory_item_name"));
+        private IWebElement _inventoryItemLabel => _seleniumDriver.FindElement(By.ClassName("inventory_item_label"));
 
         // Sort Items dropdown element.
         private IWebElement _sortProductsDropDown => _seleniumDriver.FindElement(By.ClassName("select_container"));
-
         private IWebElement _shoppingCartButton => _seleniumDriver.FindElement(By.Id("shopping_cart_container"));
         private IWebElement _shoppingCartBadge => _seleniumDriver.FindElement(By.ClassName("shopping_cart_badge"));
 
@@ -41,21 +40,20 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         public string GetSortPriceLowToHigh() => "Price (low to high)";
         public string GetSortPriceHighToLow() => "Price (high to low)";
 
-        // URL Path to the YourCart Page
         public void VisitYourCart() => _shoppingCartButton.Click();
 
         public void VisitItemPageFromImage(string itemID)
         {
-            IWebElement _itemLinkID = _inventoryItemImage.FindElement(By.Id(itemID));
+            IWebElement _itemLinkButton = _inventoryItemImage.FindElement(By.Id(itemID));
 
-            _itemLinkID.Click();
+            _itemLinkButton.Click();
         }
 
         public void VisitItemPageFromName(string itemID)
         {
-            IWebElement _itemLinkID = _inventoryItemName.FindElement(By.Id(itemID));
+            IWebElement _itemLinkButton = _inventoryItemLabel.FindElement(By.Id(itemID));
 
-            _itemLinkID.Click();
+            _itemLinkButton.Click();
         }
 
         public void SortItems(string sortType)
@@ -65,6 +63,18 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
             IWebElement sortButton = _sortProductsDropDown.FindElement(By.Name(sortType));
 
             sortButton.Click();
+        }
+
+        public bool ProductButtonCheck(string item)
+        {
+            IWebElement addButton = _seleniumDriver.FindElement(By.Id(item));
+
+            if (addButton != null)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public void AddItemToCart(string buttonID)
@@ -86,6 +96,16 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         public string GetCartTotalNumber()
         {
             return _shoppingCartBadge.Text;
+        }
+
+        public bool ShoppingCartBadgeCheck()
+        {
+            if (_shoppingCartBadge != null)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
