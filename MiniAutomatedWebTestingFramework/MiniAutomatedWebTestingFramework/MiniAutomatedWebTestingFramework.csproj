@@ -24,13 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BDD\Features\" />
-    <Folder Include="BDD\Steps\" />
-    <Folder Include="lib\pages\" />
-    <Folder Include="utils\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Testhost.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
