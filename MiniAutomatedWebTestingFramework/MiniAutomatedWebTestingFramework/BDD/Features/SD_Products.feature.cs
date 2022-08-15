@@ -96,7 +96,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am on the Products Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("I ckick on the Item\'s image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on the Item\'s image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
  testRunner.Then("I am taken to that Item\'s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

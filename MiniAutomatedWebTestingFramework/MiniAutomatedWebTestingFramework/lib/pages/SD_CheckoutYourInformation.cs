@@ -6,7 +6,7 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
     {
         private IWebDriver _seleniumDriver;
 
-        private string _CheckoutStepOnePageUrl = AppConfigReader.CheckoutStepOne;
+        private string _CheckoutStepOnePageUrl = AppConfigReader.CheckoutYourInfo;
         private IWebElement _firstNameField => _seleniumDriver.FindElement(By.Id("first-name"));
         private IWebElement _lastNameField => _seleniumDriver.FindElement(By.Id("last-name"));
         private IWebElement _postalCodeField => _seleniumDriver.FindElement(By.Id("postal-code"));
