@@ -15,7 +15,7 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
             SD_Website.SD_ProductsPage.SignIn();
         }
 
-        [When(@"I ckick on the Item's image")]
+        [When(@"I click on the Item's image")]
         public void WhenICkickOnTheItemsImage()
         {
             string productsImageLink = "item_4_img_link";
