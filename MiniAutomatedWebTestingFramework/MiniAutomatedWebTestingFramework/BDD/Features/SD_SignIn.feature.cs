@@ -95,25 +95,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I am on the SignIn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password",
                             "ErrorMessage"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "",
                             "",
                             ""});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "standard_user",
                             "",
                             "Password is required"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "",
                             "",
                             "Username is required"});
 #line 8
  testRunner.And("I provide an empty \"<Username>\" and/or \"<Password>\", with expected \"<ErrorMessage" +
-                        ">\":", ((string)(null)), table1, "And ");
+                        ">\":", ((string)(null)), table2, "And ");
 #line hidden
 #line 13
  testRunner.When("I click the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -182,20 +182,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.Given("I am on the SignIn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "standard_user",
                             "gg"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "gg",
                             "secret_sauce"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "gg",
                             "gg"});
 #line 26
- testRunner.And("I enter an invalid \"<Username>\" and/ or \"<Password>\":", ((string)(null)), table2, "And ");
+ testRunner.And("I enter an invalid \"<Username>\" and/ or \"<Password>\":", ((string)(null)), table3, "And ");
 #line hidden
 #line 31
  testRunner.When("I click the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
