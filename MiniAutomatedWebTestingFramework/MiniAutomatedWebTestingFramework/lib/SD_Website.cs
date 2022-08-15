@@ -14,6 +14,9 @@ namespace MiniAutomatedWebTestingFramework.lib
         public SD_SignInPage SD_SignInPage { get; set; }
         public SD_ProductsPage SD_ProductsPage { get; set; }
         public SD_YourCartPage SD_YourCartPage { get; set; }
+        public SD_CheckoutYourInformation SD_CheckoutYourInformation { get; set; }
+        public SD_CheckoutOverviewPage SD_CheckoutOverviewPage { get; set; }
+        public SD_CheckoutCompletePage SD_CheckoutCompletePage { get; set; }
         #endregion
 
         public SD_Website(int pageLoadInsecs = 10, int implicitWaitInSecs = 10, bool isHeadless = false)
@@ -25,6 +28,9 @@ namespace MiniAutomatedWebTestingFramework.lib
             SD_SignInPage = new SD_SignInPage(SeleniumDriver);
             SD_ProductsPage = new SD_ProductsPage(SeleniumDriver);
             SD_YourCartPage = new SD_YourCartPage(SeleniumDriver);
+            SD_CheckoutYourInformation = new SD_CheckoutYourInformation(SeleniumDriver);
+            SD_CheckoutOverviewPage = new SD_CheckoutOverviewPage(SeleniumDriver);
+            SD_CheckoutCompletePage = new SD_CheckoutCompletePage(SeleniumDriver);
 
         }
     }
