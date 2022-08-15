@@ -31,6 +31,32 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
             Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo($"https://www.saucedemo.com/inventory-item.html?{productsURLID}"));
         }
 
+        [When(@"I click an ""([^""]*)"" Add to cart button")]
+        public void WhenIClickAnAddToCartButton(string itemName)
+        {
+            SD_Website.SD_ProductsPage.AddItemToCart(itemName);
+        }
+
+
+        [Then(@"that Item is added to the cart")]
+        public void ThenThatItemIsAddedToTheCart()
+        {
+            Assert.That(SD_Website.SD_ProductsPage.GetCartTotalNumber, Is.EqualTo("1"));
+        }
+
+        [When(@"I Click the Cart Button")]
+        public void WhenIClickTheCartButton()
+        {
+            SD_Website.SD_ProductsPage.VisitYourCart();
+        }
+
+        [Then(@"I am taken to the Your Cart Page")]
+        public void ThenIAmTakenToTheYourCartPage()
+        {
+            Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo("https://www.saucedemo.com/cart.html"));
+        }
+
+
         [AfterScenario]
         public void DisposeWebDriver()
         {
