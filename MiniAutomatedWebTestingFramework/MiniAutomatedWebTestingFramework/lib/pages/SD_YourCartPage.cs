@@ -23,6 +23,7 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         #region Methods
         public SD_YourCartPage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
         public IWebElement GetItem(int i) => _cartItem[i];
+        public int GetNumberOfItems() => _cartItem.Count;
         public string GetItemName(int i) => _cartItemName[i].Text;
         public string GetItemDescription(int i) => _cartItemDescription[i].Text;
         public int GetItemQuantity(int i) => Int32.Parse(_cartItemQuantity[i].Text);
