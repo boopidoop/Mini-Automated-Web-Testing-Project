@@ -28,7 +28,20 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
         {
             string productsURLID = "id=4";
 
-            Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo($"https://www.saucedemo.com/inventory-item.html?{productsURLID}"));
+            Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo($"{AppConfigReader.ProductPageUrl}?{productsURLID}"));
+        }
+
+        [When(@"I click an ""([^""]*)"" Add to cart button")]
+        public void WhenIClickAnAddToCartButton(string itemName)
+        {
+            SD_Website.SD_ProductsPage.AddItemToCart(itemName);
+        }
+
+
+        [Then(@"that Item is added to the cart")]
+        public void ThenThatItemIsAddedToTheCart()
+        {
+            Assert.That(SD_Website.SD_ProductsPage.GetCartTotalNumber, Is.EqualTo("1"));
         }
 
         [AfterScenario]
