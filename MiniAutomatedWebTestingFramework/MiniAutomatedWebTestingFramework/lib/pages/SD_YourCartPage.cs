@@ -11,7 +11,7 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
     {
         #region Parameters
         private IWebDriver _seleniumDriver;
-        private string _YourCartPageUrl = AppConfigReader.YourCart;
+        private string _YourCartPageUrl = AppConfigReader.YourCartURL;
         private List<IWebElement> _cartItem => _seleniumDriver.FindElements(By.ClassName("cart_item")).ToList();
         private List<IWebElement> _cartItemName => _cartItem.Select(x => x.FindElement(By.ClassName("inventory_item_name"))).ToList();
         private List<IWebElement> _cartItemDescription => _cartItem.Select(x => x.FindElement(By.ClassName("inventory_item_desc"))).ToList();

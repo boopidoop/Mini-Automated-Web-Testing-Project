@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiniAutomatedWebTestingFramework.lib.pages
 {
-    public class SD_CheckoutComplete
+    public class SD_CheckoutCompletePage
     {
         #region Parameters
         private IWebDriver _seleniumDriver;
@@ -17,6 +17,8 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         private IWebElement _completionImage => _seleniumDriver.FindElement(By.ClassName("pony_express"));
         private IWebElement _backHomeButton => _seleniumDriver.FindElement(By.Id("back-to-products"));
         #endregion
+
+        public SD_CheckoutCompletePage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
         #region Methods
         public string GetCompletionText() => _completionText.Text;
