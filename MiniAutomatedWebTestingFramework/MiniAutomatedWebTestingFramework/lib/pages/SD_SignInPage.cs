@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MiniAutomatedWebTestingFramework.utils;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,11 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         public void VisitSignInPage() => _seleniumDriver.Navigate().GoToUrl(_SignInPageUrl);
         public void FillUsername(string username) => _usernameField.SendKeys(username);
         public void FillPassword(string password) => _passwordField.SendKeys(password);
+        public void InputCredentials(Credentials credentials)
+        {
+            FillUsername(credentials.Username);
+            FillPassword(credentials.Password);
+        }
         public void ClickLogin() => _loginButton.Click();
         public string GetErrorMessage() => _errorMessage.Text;
     }
