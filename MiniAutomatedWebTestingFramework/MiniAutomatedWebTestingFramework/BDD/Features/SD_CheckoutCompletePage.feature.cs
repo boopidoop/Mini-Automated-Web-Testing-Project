@@ -76,11 +76,11 @@ namespace MiniAutomatedWebTestingFramework.BDD.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Clicking on \"Back Home\" button")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("HappyPath")]
         public void ClickingOnBackHomeButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "HappyPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clicking on \"Back Home\" button", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6

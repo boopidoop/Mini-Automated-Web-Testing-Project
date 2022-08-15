@@ -47,5 +47,11 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
         {
             Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo(AppConfigReader.ProductPageUrl));
         }
+
+        [AfterScenario]
+        public void CloseDriver()
+        {
+            SD_Website.SeleniumDriver.Quit();
+        }
     }
 }
