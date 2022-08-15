@@ -2,7 +2,7 @@
 
 To list and check items in the shopping cart before payment
 
-@tag1
+@HappyPath
 Scenario: 9.7.1 Finish Button
 	Given I am on the Checkout Overview page
 	When I click the Finish button
