@@ -32,7 +32,7 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
         [When(@"I click on Continue")]
         public void WhenIClickOnContinue()
         {
-            throw new PendingStepException();
+            SD_Website.SD_CheckYourInformation.ClickContinue();
         }
 
         [Then(@"I should land on the Overview page")]
