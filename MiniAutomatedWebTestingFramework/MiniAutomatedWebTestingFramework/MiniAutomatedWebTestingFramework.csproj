@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+
+    <ApplicationManifest>MiniAutomatedWebTestingFramework.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
