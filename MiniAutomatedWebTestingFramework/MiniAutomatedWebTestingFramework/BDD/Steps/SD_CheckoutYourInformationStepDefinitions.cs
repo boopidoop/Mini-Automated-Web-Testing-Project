@@ -16,7 +16,18 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
         [Given(@"I am on the CheckoutYourInformation page")]
         public void GivenIAmOnTheCheckoutYourInformationPage()
         {
-            throw new PendingStepException();
+            // Sign In Page
+            SD_Website.SD_SignInPage.VisitSignInPage();
+            SD_Website.SD_SignInPage.FillUsername("standard_user");
+            SD_Website.SD_SignInPage.FillPassword("secret_sauce");
+            SD_Website.SD_SignInPage.ClickLogin();
+
+            // Products Page
+            SD_Website.SD_ProductsPage.AddItemToCart("add-to-cart-sauce-labs-backpack");
+            SD_Website.SD_ProductsPage.VisitYourCart();
+
+            // Your Cart Page
+            SD_Website.SD_YourCartPage.ClickCheckout();
         }
 
         [Given(@"I enter valid ""([^""]*)"", ""([^""]*)"" and ""([^""]*)"" credentials into all fields")]
@@ -24,21 +35,27 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
         {
             _customerDetails = table.CreateInstance<CustomerDetails>();
             _customerDetails.firstName = firstName.Replace(" ", "");
-            _customerDetails.lastName = firstName.Replace(" ", "");
+            _customerDetails.lastName = lastName.Replace(" ", "");
             _customerDetails.postalCode = postalCode.Replace(" ", "");
-            SD_Website.SD_CheckYourInformation.FillCustomerDetails(_customerDetails);
+            SD_Website.SD_CheckoutYourInformation.FillCustomerDetails(_customerDetails);
         }
 
         [When(@"I click on Continue")]
         public void WhenIClickOnContinue()
         {
-            SD_Website.SD_CheckYourInformation.ClickContinue();
+            SD_Website.SD_CheckoutYourInformation.ClickContinue();
         }
 
         [Then(@"I should land on the Overview page")]
         public void ThenIShouldLandOnTheOverviewPage()
         {
-            throw new PendingStepException();
+            Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo("https://www.saucedemo.com/checkout-step-two.html"));
+        }
+
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            SD_Website.SeleniumDriver.Quit();
         }
     }
 }
