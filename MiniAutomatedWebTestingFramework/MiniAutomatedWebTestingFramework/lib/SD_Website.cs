@@ -12,6 +12,7 @@ namespace MiniAutomatedWebTestingFramework.lib
 
         // Properties for the website POMs
         public SD_SignInPage SD_SignInPage { get; set; }
+        public SD_ProductsPage SD_ProductsPage { get; set; }
         #endregion
 
         public SD_Website(int pageLoadInsecs = 10, int implicitWaitInSecs = 10, bool isHeadless = false)
@@ -21,6 +22,7 @@ namespace MiniAutomatedWebTestingFramework.lib
 
             // Instatiate our POMs with the selenium driver
             SD_SignInPage = new SD_SignInPage(SeleniumDriver);
+            SD_ProductsPage = new SD_ProductsPage(SeleniumDriver);
         }
     }
 }
