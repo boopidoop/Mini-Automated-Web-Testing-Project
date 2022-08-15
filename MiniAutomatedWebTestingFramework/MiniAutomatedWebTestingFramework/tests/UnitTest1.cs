@@ -1,4 +1,4 @@
-namespace MiniAutomatedWebTestingFramework
+namespace MiniAutomatedWebTestingFramework.tests
 {
     public class Tests
     {
