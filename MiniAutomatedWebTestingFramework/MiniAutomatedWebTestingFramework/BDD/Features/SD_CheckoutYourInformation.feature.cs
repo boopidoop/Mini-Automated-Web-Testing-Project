@@ -124,6 +124,52 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("8.1.2 Enter credentials in all fields (Invalid)")]
+        [NUnit.Framework.CategoryAttribute("SadPath")]
+        public void _8_1_2EnterCredentialsInAllFieldsInvalid()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "SadPath"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8.1.2 Enter credentials in all fields (Invalid)", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 18
+ testRunner.Given("I am on the CheckoutYourInformation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "postalCode"});
+                table2.AddRow(new string[] {
+                            ""});
+                table2.AddRow(new string[] {
+                            "NotAPostCode"});
+                table2.AddRow(new string[] {
+                            "0"});
+#line 19
+ testRunner.And("I enter an invalid \"<postalCode>\"", ((string)(null)), table2, "And ");
+#line hidden
+#line 24
+ testRunner.When("I click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 25
+ testRunner.Then("I should be shown an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 26
+ testRunner.And("should stay on the Checkout - Your Information page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

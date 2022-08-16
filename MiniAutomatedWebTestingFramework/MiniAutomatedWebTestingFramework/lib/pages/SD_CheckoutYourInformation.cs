@@ -13,7 +13,7 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
         private IWebElement _postalCodeField => _seleniumDriver.FindElement(By.Id("postal-code"));
         private IWebElement _continueButton => _seleniumDriver.FindElement(By.Id("continue"));
         private IWebElement _cancelButton => _seleniumDriver.FindElement(By.Id("cancel"));
-        private IWebElement _errorMessageContainer => _seleniumDriver.FindElement(By.ClassName("error-message-container error"));
+        private IWebElement _errorMessageContainer => _seleniumDriver.FindElement(By.ClassName("error-message-container"));
 
         private IWebElement _shoppingCartLink => _seleniumDriver.FindElement(By.ClassName("shopping_cart_link"));
         private IWebElement _shoppingCartBadge => _seleniumDriver.FindElement(By.ClassName("shopping_cart_badge"));
