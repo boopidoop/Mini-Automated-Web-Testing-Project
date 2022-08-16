@@ -1,14 +1,12 @@
 # Mini Automated Web Testing Project
 
 ## Project Description
-### What our framework does...
-Our framework uses NUnit, Selenium, and SpecFlow to test the functionality of the SauceDemo website.
-The end-to-end user journey of buying a product has been tested.
 
-### Why we used these technologies...
+Our framework uses NUnit, Selenium, and SpecFlow to test the functionality of the SauceDemo (https://www.saucedemo.com/) website.
+
+The end-to-end user journey of buying a product from the site has been tested.
+
 We have used NUnit, Selenium, SpecFlow as these are industry recognised tools that can be made use of by a wide community.
-
-### Some of the challenges we faced, and future features
 
 ## How to Install & Run
 ### How to Install
@@ -28,11 +26,22 @@ We have used NUnit, Selenium, SpecFlow as these are industry recognised tools th
 
 ### How to Run
 
-1. Open the Test Explorer view
-2. Select "Run All" tests
+1. Open the solution in Visual Studio 2022
+2. Open the Test Explorer view
+3. Select "Run All" tests
 
-## How to Use the Project
+## Project Contents
 
-## Credits
+The project contains tests for the following primary user journey: From sign in to the successful purchase of a single item.
+
+```mermaid
+graph TD
+Login[Sign In] --Valid credentials entered, Login button pressed--> Products[Products]
+Products --Add an item, Click on Cart--> YourCart[Your Cart]
+YourCart --Checkout button pressed--> CheckoutYourInformation[Checkout: Your Information]
+CheckoutYourInformation --Customer details entered, Continue button pressed--> CheckoutOverview[Checkout: Overview]
+CheckoutOverview --Finish button pressed--> OrderComplete[Order Complete]
+```
 
 ## How to Contribute
+The team welcomes the submission of feature files with associated spec-flow step definitions containing tests for other user journies.
