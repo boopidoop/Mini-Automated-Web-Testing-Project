@@ -40,10 +40,30 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
             SD_Website.SD_CheckoutYourInformation.FillCustomerDetails(_customerDetails);
         }
 
+        [Given(@"I enter an invalid ""([^""]*)""")]
+        public void GivenIEnterAnInvalidPostalOrZipCode(string postalCode, Table table)
+        {
+            SD_Website.SD_CheckoutYourInformation.FillFirstName("Jane");
+            SD_Website.SD_CheckoutYourInformation.FillLastName("Doe");
+            SD_Website.SD_CheckoutYourInformation.FillPostalCode(postalCode);
+        }
+
         [When(@"I click on Continue")]
         public void WhenIClickOnContinue()
         {
             SD_Website.SD_CheckoutYourInformation.ClickContinue();
+        }
+
+        [Then(@"I should be shown an error")]
+        public void ThenIShouldBeShownAnError()
+        {
+            Assert.That(SD_Website.SD_CheckoutYourInformation.GetErrorMessage(), Is.Not.Null);
+        }
+
+        [Then(@"should stay on the Checkout - Your Information page")]
+        public void ThenShouldStayOnThePage()
+        {
+            Assert.That(SD_Website.SeleniumDriver.Url, Is.EqualTo("https://www.saucedemo.com/checkout-step-one.html"));
         }
 
         [Then(@"I should land on the Overview page")]
