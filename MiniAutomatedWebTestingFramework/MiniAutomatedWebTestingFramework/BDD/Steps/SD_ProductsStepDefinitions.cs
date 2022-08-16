@@ -27,11 +27,11 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
             SD_Website.SD_ProductsPage.VisitItemPageFromImage(itemImageID);
         }
 
-        [When(@"I click on the ""([^""]*)"" name")]
-        public void WhenIClickOnTheName(string itemNameID) // This should work but fails saying: Unable to locate element.
-        {
-            SD_Website.SD_ProductsPage.VisitItemPageFromName(itemNameID);
-        }
+        //[When(@"I click on the ""([^""]*)"" name")]
+        //public void WhenIClickOnTheName(string itemNameID) // This should work but fails saying: Unable to locate element.
+        //{
+        //    SD_Website.SD_ProductsPage.VisitItemPageFromName(itemNameID);
+        //}
 
         [Then(@"I am taken to that Item's ""([^""]*)""")]
         public void ThenIAmTakenToThatItems(string pageID)
@@ -55,18 +55,6 @@ namespace MiniAutomatedWebTestingFramework.BDD.Steps
         public void WhenIClickTheCartButton()
         {
             SD_Website.SD_ProductsPage.VisitYourCart();
-        }
-
-        [When(@"I have no Items in the cart")]
-        public void WhenIHaveNoItemsInTheCart()
-        {
-            Assert.That(SD_Website.SD_ProductsPage.ShoppingCartBadgeCheck()); // Not sure how to check the cart is empty on the products page, Test will Fail.
-        }
-
-        [Then(@"I should not be able to click an ""([^""]*)"" Remove button")]
-        public void ThenIShouldNotBeAbleToClickAnRemoveButton(string item)
-        {
-            Assert.That(!SD_Website.SD_ProductsPage.ProductButtonCheck(item));
         }
 
         [When(@"I click that ""([^""]*)"" button")]

@@ -4,21 +4,23 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
 {
     public class SD_ProductsPage
     {
+        #region Parameters
         private IWebDriver _seleniumDriver;
         private SD_SignInPage _signinPage;
 
         private IWebElement _inventoryItemImage => _seleniumDriver.FindElement(By.ClassName("inventory_item_img"));
         private IWebElement _inventoryItemLabel => _seleniumDriver.FindElement(By.ClassName("inventory_item_label"));
 
-        // Sort Items dropdown element.
         private IWebElement _sortProductsDropDown => _seleniumDriver.FindElement(By.ClassName("select_container"));
         private IWebElement _shoppingCartButton => _seleniumDriver.FindElement(By.Id("shopping_cart_container"));
         private IWebElement _shoppingCartBadge => _seleniumDriver.FindElement(By.ClassName("shopping_cart_badge"));
+        #endregion
 
+        #region Methods
         public SD_ProductsPage(IWebDriver seleniumDriver)
         {
             _seleniumDriver = seleniumDriver;
-            _signinPage = new SD_SignInPage(seleniumDriver); // Gives access to the Signin features
+            _signinPage = new SD_SignInPage(seleniumDriver);
         }
 
         public void SignIn()
@@ -31,10 +33,8 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
             Thread.Sleep(2000);
         }
 
-        // Not sure how helpful these methods are.
         public string GetProductsPageURL() => AppConfigReader.ProductPageUrl;
 
-        // Use these in the tests methods when testing the Sort options
         public string GetSortAToZ() => "Name (A to Z)";
         public string GetSortZToA() => "Name (Z to A)";
         public string GetSortPriceLowToHigh() => "Price (low to high)";
@@ -107,5 +107,6 @@ namespace MiniAutomatedWebTestingFramework.lib.pages
 
             return false;
         }
+        #endregion
     }
 }
