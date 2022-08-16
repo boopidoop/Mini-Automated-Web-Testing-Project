@@ -75,11 +75,11 @@ namespace MiniAutomatedWebTestingFramework.BDD.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("9.7.1 Finish Button")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("HappyPath")]
         public void _9_7_1FinishButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "HappyPath"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9.7.1 Finish Button", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
